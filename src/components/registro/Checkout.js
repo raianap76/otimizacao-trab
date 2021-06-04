@@ -87,7 +87,7 @@ export default function Checkout() {
 
 
         try {
-          const teste = await axios.post('https://api-backend-spring.herokuapp.com/v2/api-docs/user/create', {
+          const teste = await axios.post('https://api-backend-spring.herokuapp.com/user/create', {
             "email": email,
             "is_admin": true,
             "name": nomeContato,
@@ -100,7 +100,6 @@ export default function Checkout() {
           guardarComponenteContx({
             numero_componente: null,
             numero_ventana: 0,
-            nivel_acceso: null,
           })
           /*
 
@@ -141,7 +140,6 @@ export default function Checkout() {
     guardarComponenteContx({
       numero_componente: null,
       numero_ventana: 0,
-      nivel_acceso: null,
     })
   }
 
@@ -175,7 +173,6 @@ export default function Checkout() {
             <Modal
               openmodal={openmodal}
               setOpenModal={setOpenModal}
-              guardarBandDatosApi={guardarBandDatosApi}
             />
           </Fragment>
         </Paper>

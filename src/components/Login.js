@@ -63,7 +63,7 @@ const Login = () => {
     // }
     const consultarAPI = async () => {
         try {
-            const consulta = await axios.post('https://api-backend-spring.herokuapp.com/v2/api-docs/auth', {
+            const consulta = await axios.post('https://api-backend-spring.herokuapp.com/auth', {
                 email: email,
                 password: password
             })
@@ -89,8 +89,8 @@ const Login = () => {
 
             nivelAcceso = 1
             const objeto = {
-                nivel_acceso: nivelAcceso,
-                numero_componente: 1,
+
+                numero_componente: 2,
                 numero_ventana: 1
             }
 
@@ -104,9 +104,9 @@ const Login = () => {
 
             */
             guardarComponenteContx({
-                nivel_acceso: nivelAcceso,
+
                 numero_ventana: 1,
-                numero_componente: 1
+                numero_componente: 2
             })
             /*
 

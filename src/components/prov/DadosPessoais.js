@@ -32,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
 export default function DatosPersonales({ perfil }) {
   const classes = useStyles();
 
-  let { email, nomeContato } = perfil
+  let email = ""
+  let nomeContato = ""
   email = localStorage.getItem('email')
   nomeContato = localStorage.getItem('name')
 

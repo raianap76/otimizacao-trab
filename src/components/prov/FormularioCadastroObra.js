@@ -2,48 +2,27 @@ import React, { Fragment } from 'react';
 import { Button, InputLabel, Select, MenuItem, Grid, TextField } from '@material-ui/core';
 import { Add } from '@material-ui/icons/'
 
-const FormularioCotizarObraProv = ({ guardarBandBotonRegistrar, guardarRows, rows, guardarError, categorias, subcategorias, productos, datos, guardarDatos, classes }) => {
+const FormularioCotizarObraProv = ({ classes }) => {
 
-    const { folioItem, categoria, subcategoria, producto, unidad, preciounitario, requeridos, anotaciones, sostenimiento, condiciones } = datos
+    /// const { categoria, subcategoria, producto, unidad, preciounitario, requeridos, anotaciones, sostenimiento, condiciones } = datos
 
     const handleChange = e => {
 
-        guardarDatos({
-            ...datos,
-            [e.target.name]: e.target.value
-        })
+        // guardarDatos({
+        //     ...datos,
+        //     [e.target.name]: e.target.value
+        // })
     }
 
     const submitTabla = e => {
         e.preventDefault()
 
-        if (producto.trim() === '' || preciounitario.trim() === '' || anotaciones.trim() === '' || unidad.trim() === '') {
-            guardarError({ bandError: true, mensajeError: 'Todos los campos son obligadorios' })
-            return
-        }
+        // if (producto.trim() === '' || preciounitario.trim() === '' || anotaciones.trim() === '' || unidad.trim() === '') {
+        //     guardarError({ bandError: true, mensajeError: 'Todos os dados devem ser preenchidos' })
+        //     return
+        // }
 
-        const result = rows.find(row => row.folioItem === folioItem)
 
-        if (result) {
-            guardarError({ bandError: true, mensajeError: 'El producto ya ha sido ingresado' })
-            return
-        }
-
-        guardarError({ bandError: false, mensajeError: '' })
-
-        guardarRows([...rows, datos])
-        guardarDatos({
-            ...datos,
-            folioItem: '',
-            categoria: '',
-            subcategoria: '',
-            producto: '',
-            unidad: '',
-            requeridos: 0,
-            anotaciones: '',
-            eliminar: ''
-        })
-        guardarBandBotonRegistrar(false)
     }
     return (
         <Fragment>
@@ -61,7 +40,7 @@ const FormularioCotizarObraProv = ({ guardarBandBotonRegistrar, guardarRows, row
                             id="sostenimiento"
                             name="sostenimiento"
                             label="Prazo"
-                            value={sostenimiento}
+                            // value={sostenimiento}
                             onChange={handleChange}
                             type='number'
                             fullWidth
@@ -72,7 +51,7 @@ const FormularioCotizarObraProv = ({ guardarBandBotonRegistrar, guardarRows, row
                             id="sostenimiento"
                             name="sostenimiento"
                             label="Tempo Limite"
-                            value={sostenimiento}
+                            // value={sostenimiento}
                             onChange={handleChange}
                             type='number'
                             fullWidth
@@ -84,7 +63,7 @@ const FormularioCotizarObraProv = ({ guardarBandBotonRegistrar, guardarRows, row
                             id="preciounitario"
                             name="preciounitario"
                             label="Bonus Entrega"
-                            value={preciounitario}
+                            //  value={preciounitario}
                             onChange={handleChange}
                             fullWidth
                         />
@@ -95,7 +74,7 @@ const FormularioCotizarObraProv = ({ guardarBandBotonRegistrar, guardarRows, row
                             id="preciounitario"
                             name="preciounitario"
                             label="Valor Total"
-                            value={preciounitario}
+                            //  value={preciounitario}
                             onChange={handleChange}
                             fullWidth
                         />
